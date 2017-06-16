@@ -1,0 +1,29 @@
+﻿Build started 16-6-2017 12:22:18.
+     1>Project "C:\Documents and Settings\robot\desktop\Copy of RobotProgramCharlotte\ParallelPort\PaPiC.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating ".\Release\PaPiC.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Ob1 /Oy- /D WIN32 /D NDEBUG /D _WINDOWS /D _VC80_UPGRADE=0x0600 /D _MBCS /D _AFXDLL /GF /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Yc"stdafx.h" /Fp".\Release\PaPiC.pch" /Fo".\Release\\" /Fd".\Release\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt StdAfx.cpp
+         StdAfx.cpp
+         _WIN32_WINNT not defined. Defaulting to _WIN32_WINNT_MAXVER (see WinSDKVer.h)
+         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Ob1 /Oy- /D WIN32 /D NDEBUG /D _WINDOWS /D _VC80_UPGRADE=0x0600 /D _MBCS /D _AFXDLL /GF /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp".\Release\PaPiC.pch" /Fo".\Release\\" /Fd".\Release\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt CPaPiC.cpp PaPiC.cpp PaPiCDlg.cpp
+         CPaPiC.cpp
+         PaPiC.cpp
+         PaPiCDlg.cpp
+         Generating Code...
+       ResourceCompile:
+         C:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /D NDEBUG /D _VC80_UPGRADE=0x0600 /D _AFXDLL /l"0x040e" /nologo /fo".\Release\PaPiC.res" PaPiC.rc 
+       Link:
+         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:".\Release\PaPiC.exe" /INCREMENTAL:NO /NOLOGO /MANIFEST /ManifestFile:".\Release\PaPiC.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /PDB:"C:\Documents and Settings\robot\desktop\Copy of RobotProgramCharlotte\ParallelPort\Release\PaPiC.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\Release\PaPiC.lib" /MACHINE:X86 .\Release\PaPiC.res
+         .\Release\CPaPiC.obj
+         .\Release\PaPiC.obj
+         .\Release\PaPiCDlg.obj
+         .\Release\StdAfx.obj
+     1>CPaPiC.obj : error LNK2019: unresolved external symbol "void __stdcall Out32(short,short)" (?Out32@@YGXFF@Z) referenced in function "public: void __thiscall CPaPiC::pin_init_user(int)" (?pin_init_user@CPaPiC@@QAEXH@Z)
+     1>CPaPiC.obj : error LNK2019: unresolved external symbol "short __stdcall Inp32(short)" (?Inp32@@YGFF@Z) referenced in function "public: void __thiscall CPaPiC::pin_init_user(int)" (?pin_init_user@CPaPiC@@QAEXH@Z)
+     1>.\Release\PaPiC.exe : fatal error LNK1120: 2 unresolved externals
+     1>Done Building Project "C:\Documents and Settings\robot\desktop\Copy of RobotProgramCharlotte\ParallelPort\PaPiC.vcxproj" (build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:05.20
