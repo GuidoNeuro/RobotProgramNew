@@ -15,6 +15,8 @@
 #include "Parameters.h"
 #include "KalmanFilter.h"
 #include "GlobalStuff.h"
+#include "ParallelPort\CPaPiC.h"
+//#include "C:\Documents and Settings\robot\Desktop\Copy of RobotProgramCharlotte\ParallelPort\CPaPiC.h" //change to complete directory on your PC. It didn't work without it with us!
 #include <fstream>
 #include <sstream>
 #include <exception>
@@ -215,6 +217,9 @@ Start Trial
 ****************************************************************/
 void Trial::startTrial() {
 	currentStage = trialStart;
+	CPaPiC papi; // Parallel port pin class object
+	papi.clear_pin(LP_OUTPUT_PINS); // clear all pins
+
 
 	// Generate a ParameterListVector for storing the data from the trial
 	vector<string> dataNames;
@@ -504,6 +509,14 @@ void Trial::processTrial(Drawings& draw) {
 				saveDataTrial.addParam("trialMovementTime", Parameter(trialMovementTime));
 				saveDataTrial.addParam("Success", Parameter(succesfulTrial));
 
+				// ADD ZDJ 09-05-2017 trigger at movement end
+				if (!(origin.checkHit(cursor.getDisplayedPosition(), radiusMagTest ))){
+					// trigger signal
+					CPaPiC papi; // Parallel port pin class object
+					papi.pin_output_mode(LP_PIN02);
+					papi.set_pin(LP_PIN02);
+				}
+				
 				// Can comment damping out, since this might give proprioceptive feedback on the location of your hand
 				_forces.startDamping();
 				//cursor.off();
